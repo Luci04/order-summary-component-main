@@ -1,47 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.attribution {
-  width: 100%;
-  background-color: white;
-  text-decoration: none;
-  position: absolute;
-  bottom: 0px;
-  text-align: center;
-}
-
 body {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display";
   min-height: 100vh;
-  background-image: url("./images/pattern-background-desktop.svg");
+  background-image: url("images/pattern-background-desktop.svg");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-color: hsl(255, 100%, 94%);
-  position: relative;
+  background-size: content;
+  background-color: hsl(225, 100%, 94%);
   font-size: 16px;
 }
 
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* vertical-align: middle; */
+}
+
 .container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  max-width: 400px;
-  /* max-height: 600px; */
-  background: white;
+  /*width: ;
+    */
+  overflow: hidden;
+  max-width: 420px;
+  background-color: #fff;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-  overflow: hidden;
 }
 
 .text-content {
@@ -49,31 +42,28 @@ body {
   text-align: center;
 }
 
-.hero img {
-  max-height: 180px;
-}
-
 .title {
-  color: hsl(233, 47%, 23%);
+  color: hsl(223, 47%, 23%);
   font-weight: 900;
   font-size: 32px;
   margin-bottom: 20px;
 }
 
-.text-content .subtitle {
-  color: #8a8a8a;
+.text-content p.subtitle {
+  text-align: center;
+  color: rgb(87, 85, 85);
   margin-bottom: 25px;
 }
 
 .plan-box {
-  background-color: hsl(225, 100%, 98%);
+  background-color: hsl(225, 100%, 94%);
   border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
   display: flex;
-  padding: 25px;
+  padding: 20px;
   align-items: center;
   justify-content: space-between;
 }
@@ -82,21 +72,6 @@ body {
   display: flex;
   align-items: center;
   text-align: left;
-}
-
-.plan-box a {
-  font-weight: 900;
-  color: hsl(223, 47%, 23%);
-  transition: color 0.3s ease;
-  -webkit-transition: color 0.3s ease;
-  -moz-transition: color 0.3s ease;
-  -ms-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-}
-
-.plan-box a:hover {
-  text-decoration: none;
-  color: hsl(245, 75%, 52%);
 }
 
 .plan-box-left div {
@@ -110,13 +85,23 @@ body {
 }
 
 .plan-box-left div p {
+  color: rgb(87, 85, 85);
   font-size: 14px;
-  color: #8a8a8a;
 }
 
 .plan-box a {
   font-weight: 900;
   color: hsl(223, 47%, 23%);
+  transition: color 0.5s ease-in;
+  -webkit-transition: color 0.5s ease-in;
+  -moz-transition: color 0.5s ease-in;
+  -ms-transition: color 0.5s ease-in;
+  -o-transition: color 0.5s ease-in;
+}
+
+.plan-box a:hover {
+  text-decoration: none;
+  color: hsl(245, 75%, 52%);
 }
 
 a.proceed-btn {
@@ -124,27 +109,37 @@ a.proceed-btn {
   text-decoration: none;
   color: white;
   background-color: hsl(245, 75%, 52%);
-  padding: 20px 0px;
+  padding: 20px 0;
   border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-  margin: 30px 0;
-  transition: background-color 0.3s easy;
-  -webkit-transition: background-color 0.3s easy;
-  -moz-transition: background-color 0.3s easy;
-  -ms-transition: background-color 0.3s easy;
-  -o-transition: background-color 0.3s easy;
+  margin: 25px 0;
+  transition: background-color 0.3s ease-in;
+  -webkit-transition: background-color 0.3s ease-in;
+  -moz-transition: background-color 0.3s ease-in;
+  -ms-transition: background-color 0.3s ease-in;
+  -o-transition: background-color 0.3s ease-in;
 }
 
 a.proceed-btn:hover {
   background-color: hsl(224, 23%, 55%);
 }
 
+a.cancle-btn {
+  color: hsl(224, 23%, 55%);
+  text-decoration: none;
+  font-weight: 900;
+}
+
+a.cancle-btn:hover {
+  color: hsl(223, 47%, 23%);
+}
+
 @media only screen and (max-width: 425px) {
   .body {
-    background-image: url("./images/pattern-background-mobile.svg");
+    background-image: url("images/pattern-background-mobile.svg");
     font-size: 14px;
   }
   .container {
@@ -155,8 +150,8 @@ a.proceed-btn:hover {
     font-size: 23px;
   }
 
-  .plan-box {
-    padding: 23px;
+  div.plan-box {
+    padding: 12px;
   }
 
   .plan-box-left div {
@@ -166,12 +161,25 @@ a.proceed-btn:hover {
   a.proceed-btn,
   a.cancle-btn,
   .plan-box a {
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .text-content {
+    padding: 9% 7%;
   }
 }
 
-.cancle-btn {
-  color: hsl(224, 23%, 55%);
+.attribution {
+  position: fixed;
+
+  inset: auto 0 0 0;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+.attribution a {
+  padding: 0 5px;
   text-decoration: none;
-  font-weight: 900;
+  color: white;
 }
